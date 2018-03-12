@@ -10,12 +10,12 @@ const Footer = () => (
       All
     </FilterLink>
     {', '}
-    <FilterLink filter={VisibilityFilters.SHOW_ACTIVE}>
-      Active
+    <FilterLink filter={VisibilityFilters._SHOW_NOT_RETWEETED}>
+      To retweet
     </FilterLink>
     {', '}
-    <FilterLink filter={VisibilityFilters.SHOW_COMPLETED}>
-      Completed
+    <FilterLink filter={VisibilityFilters.SHOW_RETWEETED}>
+      Retweeted
     </FilterLink>
   </p>
 );

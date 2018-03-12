@@ -1,13 +1,12 @@
-require('babel-polyfill');
 import React from 'react';
 import Footer from './footer/Footer';
-import AddTask from './../containers/AddTask';
-import VisibleTaskList from './../containers/VisibleTaskList';
+import AddTweet from '../containers/AddTweet';
+import VisibleTweetList from '../containers/VisibleTweetList';
 
 const App = () => (
   <div>
-    <AddTask />
-    <VisibleTaskList />
+    <AddTweet />
+    <VisibleTweetList />
     <Footer />
   </div>
 );

@@ -5,7 +5,7 @@ const nodeExternals = require('webpack-node-externals');
 const config = {
   entry: [
     'babel-polyfill',
-    './server.js'
+    './index.js'
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),

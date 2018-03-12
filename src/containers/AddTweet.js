@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {addTask} from './../actions/actions';
+import {addTweet} from './../actions/actions';
 
-let AddTask = ({dispatch}) => {
+let AddTweet = ({dispatch}) => {
   let input;
 
   return (
@@ -13,23 +13,23 @@ let AddTask = ({dispatch}) => {
           if (!input.value.trim()) {
             return;
           }
-          dispatch(addTask(input.value));
+          dispatch(addTweet(input.value));
           input.value = '';
         }}
       >
-        <input
+        <textarea
           ref={node => {
             input = node;
           }}
         />
         <button type="submit">
-          Add Task
+          Add Tweet
         </button>
       </form>
     </div>
   );
 };
 
-AddTask = connect()(AddTask);
+AddTweet = connect()(AddTweet);
 
-export default AddTask;
+export default AddTweet;

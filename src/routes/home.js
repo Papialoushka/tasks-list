@@ -1,16 +1,16 @@
-const express = require('express');
-const router = express.Router();
+import express from 'express';
 import {renderToString} from 'react-dom/server';
 import App from './../components/App';
 import {createStore} from 'redux';
-import tasksApp from './../reducers/reducers';
+import tweetsApp from './../reducers/reducers';
 import {StaticRouter as Router, Route} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import React from 'react';
+const router = express.Router();
 
 router.get('/', (req, res) => {
   const context = {};
-  let store = createStore(tasksApp);
+  let store = createStore(tweetsApp);
   const Root = ({store}) => (
     <Provider store={store}>
       <Router location={req.url} context={context}>
@@ -18,9 +18,9 @@ router.get('/', (req, res) => {
       </Router>
     </Provider>
   );
-  const preloadedState = store.getState();
   const body = renderToString(<Root store={store}/>);
-  const title = 'Tasks List App';
+  const preloadedState = store.getState();
+  const title = 'Tweets App';
 
   const renderFullPage = (html = {body, title}, preloadedState) => {
     return `
@@ -28,6 +28,8 @@ router.get('/', (req, res) => {
     <html lang='en'>
       <head>
         <title>${title}</title>
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="/static/main.css">
       </head>
       <body>
         <div id="root">${body}</div>
@@ -36,7 +38,7 @@ router.get('/', (req, res) => {
           // http://redux.js.org/recipes/ServerRendering.html#security-considerations
           window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
         </script>
-        <script src="/dist/bundle.js"></script>
+        <script src="/static/bundle.js"></script>
       </body>
     </html>
     `

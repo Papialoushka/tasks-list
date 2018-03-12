@@ -1,5 +1,5 @@
 import {createStore} from 'redux';
-import tasksApp from '../reducers/reducers';
+import tweetsApp from '../reducers/reducers';
 
-let store = createStore(tasksApp);
-//let store = createStore(tasksApp, window.STATE_FROM_SERVER);
+let store = createStore(tweetsApp);
+//let store = createStore(tweetsApp, window.STATE_FROM_SERVER);

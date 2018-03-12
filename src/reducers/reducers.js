@@ -1,10 +1,10 @@
 import {combineReducers} from 'redux';
-import tasks from './tasksReducer';
+import tweets from './tweetsReducer';
 import visibilityFilter from './filterReducer';
 
-const tasksApp = combineReducers({
-  tasks,
+const tweetsApp = combineReducers({
+  tweets,
   visibilityFilter
 });
 
-export default tasksApp;
+export default tweetsApp;
