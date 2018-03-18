@@ -8,6 +8,8 @@ const getVisibleTweets = (tweets, filter) => {
       return tweets;
     case 'SHOW_RETWEETED':
       return tweets.filter(tweet => tweet.retweeted);
+    case 'SHOW_NOT_RETWEETED':
+      return tweets.filter(tweet => !tweet.retweeted);
     case 'SHOW_ACTIVE':
       return tweets.filter(tweet => !tweet.retweeted);
     default:

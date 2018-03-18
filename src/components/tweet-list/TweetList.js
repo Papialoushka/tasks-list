@@ -13,7 +13,7 @@ const TweetList = ({tweets, onTweetClick}) => (
 TweetList.propTypes = {
   tweets: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired,
       retweeted: PropTypes.bool.isRequired,
       text: PropTypes.string.isRequired
     }).isRequired

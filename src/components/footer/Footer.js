@@ -10,7 +10,7 @@ const Footer = () => (
       All
     </FilterLink>
     {', '}
-    <FilterLink filter={VisibilityFilters._SHOW_NOT_RETWEETED}>
+    <FilterLink filter={VisibilityFilters.SHOW_NOT_RETWEETED}>
       To retweet
     </FilterLink>
     {', '}

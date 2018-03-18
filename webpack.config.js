@@ -4,7 +4,6 @@ const nodeExternals = require('webpack-node-externals');
 
 const config = {
   entry: [
-    'babel-polyfill',
     './index.js'
   ],
   output: {
@@ -12,15 +11,7 @@ const config = {
     filename: 'bundle.js',
     publicPath: '/'
   },
-  target: 'node',
-  externals: nodeExternals(),
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: `'production'`
-      }
-    })
-  ],
+  devtool: 'eval-source-map',
   module: {
     rules: [
       {
